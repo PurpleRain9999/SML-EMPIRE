@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💲SML-EMPIRE💲 | Empire Dashboard</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">💲SML-EMPIRE💲</div>
+  <button id="menuBtn" class="menu">☰</button>
+</header>
+
+<aside id="sidebar">
+  <nav>
+    <button class="nav active" data-page="dashboard">🏠 Dashboard</button>
+    <button class="nav" data-page="earn">💰 Earn</button>
+    <button class="nav" data-page="referrals">🤝 Referrals</button>
+    <button class="nav" data-page="wallet">💳 Wallet</button>
+    <button class="nav" data-page="profile">👤 Profile</button>
+    <button class="nav" data-page="security">🛡️ Security</button>
+  </nav>
+  <div class="side-note">Founder edition<br><strong>Secure • Transparent • Built to grow</strong></div>
+</aside>
+
+<main id="app">
+  <section id="dashboard" class="page">
+    <div class="hero">
+      <div>
+        <span class="eyebrow">WELCOME TO THE EMPIRE</span>
+        <h1>Build. Earn. Grow.</h1>
+        <p>A foundation for the future 💲SML-EMPIRE💲 community.</p>
+      </div>
+      <div class="hero-badge">MVP 1.0</div>
+    </div>
+    <div class="grid cards">
+      <article class="card"><span>Available balance</span><strong id="balance">R0.00</strong><small>Demo wallet balance</small></article>
+      <article class="card"><span>Lifetime earnings</span><strong id="lifetime">R0.00</strong><small>Recorded in this browser</small></article>
+      <article class="card"><span>Referrals</span><strong id="refCount">0</strong><small>People referred</small></article>
+      <article class="card"><span>Empire level</span><strong id="level">Starter</strong><small>Progress toward next level</small></article>
+    </div>
+    <article class="panel">
+      <div class="panel-head"><h2>Quick actions</h2></div>
+      <div class="actions">
+        <button class="primary" data-go="earn">View earning opportunities</button>
+        <button data-go="referrals">Invite members</button>
+        <button data-go="wallet">Open wallet</button>
+      </div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><h2>Recent activity</h2></div>
+      <div id="activity" class="activity empty">No activity yet.</div>
+    </article>
+  </section>
+
+  <section id="earn" class="page hidden">
+    <div class="section-title"><span class="eyebrow">LEGITIMATE OPPORTUNITIES</span><h1>Earn</h1><p>Demo earning tasks for the MVP. Real payouts require a verified backend and approved payment provider.</p></div>
+    <div class="grid opportunities">
+      <article class="panel opportunity"><div class="icon">🎯</div><h2>Daily Check-in</h2><p>Return once per day and complete your check-in.</p><strong>+R1.00</strong><button class="primary earn-btn" data-amount="1" data-name="Daily Check-in">Complete</button></article>
+      <article class="panel opportunity"><div class="icon">📚</div><h2>Learning Task</h2><p>Complete a short educational activity.</p><strong>+R2.50</strong><button class="primary earn-btn" data-amount="2.5" data-name="Learning Task">Complete</button></article>
+      <article class="panel opportunity"><div class="icon">⭐</div><h2>Community Task</h2><p>Participate in an approved community activity.</p><strong>+R5.00</strong><button class="primary earn-btn" data-amount="5" data-name="Community Task">Complete</button></article>
+    </div>
+  </section>
+
+  <section id="referrals" class="page hidden">
+    <div class="section-title"><span class="eyebrow">GROW TOGETHER</span><h1>Referrals</h1><p>Invite people using your unique referral code. Referral rewards should only be paid for genuine, verified activity.</p></div>
+    <article class="panel referral">
+      <label>Your referral code</label>
+      <div class="code-row"><input id="refCode" readonly value="SML-DEMO-001"><button id="copyRef">Copy</button></div>
+      <div class="ref-stats"><span>Referrals<strong id="refCount2">0</strong></span><span>Referral earnings<strong id="refEarn">R0.00</strong></span></div>
+    </article>
+  </section>
+
+  <section id="wallet" class="page hidden">
+    <div class="section-title"><span class="eyebrow">YOUR MONEY</span><h1>Wallet</h1><p>This MVP stores demo data locally. Do not treat this browser wallet as a real financial account.</p></div>
+    <article class="panel wallet-box">
+      <span>Available balance</span><strong id="walletBalance">R0.00</strong>
+      <button id="withdraw" class="primary">Request withdrawal</button>
+      <p class="notice">Withdrawals are disabled in this prototype until identity checks, fraud controls, terms, and a compliant payment processor are connected.</p>
+    </article>
+  </section>
+
+  <section id="profile" class="page hidden">
+    <div class="section-title"><span class="eyebrow">MEMBER AREA</span><h1>Profile</h1></div>
+    <article class="panel form">
+      <label>Username</label><input id="username" maxlength="30" placeholder="Choose a username (no emojis)">
+      <label>Display name</label><input id="displayName" maxlength="60" placeholder="Your display name">
+      <button id="saveProfile" class="primary">Save profile</button>
+      <p id="saveMsg" class="success"></p>
+    </article>
+  </section>
+
+  <section id="security" class="page hidden">
+    <div class="section-title"><span class="eyebrow">PROTECTION FIRST</span><h1>Security</h1></div>
+    <div class="grid security-grid">
+      <article class="panel"><h2>🔐 Account security</h2><p>Production version should use hashed passwords, secure sessions, rate limiting, email verification and optional 2FA.</p></article>
+      <article class="panel"><h2>🛡️ Anti-fraud</h2><p>Use server-side transaction validation, duplicate-account detection, withdrawal review and audit logs.</p></article>
+      <article class="panel"><h2>⚖️ Compliance</h2><p>Before accepting real money, implement appropriate terms, privacy controls, consumer protections and South African legal/compliance review.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 💲SML-EMPIRE💲 • Prototype / MVP</footer>
+<script src="app.js"></script>
+</body>
+</html>
